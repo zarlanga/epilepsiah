@@ -22,21 +22,21 @@
     <script src="/script.js" defer></script>
     <script>
       //var cont=0;
-        var contInner=0;
+        
         var interval= 1000;
-      var interdelta=3000;
+      var interdelta=1500;
         var str= "";
         var re=00;
         var gr= 00;
         var blu=00;
-        var randcolor=150;
-        var medidas=50;
+        var randcolor=30;
+        var medidas=40;
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
       
         
-      for (var i =0; i<300;i++){
+      for (var i =0; i<500;i++){
         console.log(i);
         str += "<div class=\"carousel slide\" data-ride=\"carousel\""
         + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";
@@ -56,6 +56,10 @@
       b.innerHTML += str;
       });
       
+      function getInterval2(){
+        var variac =200;
+        
+      }
       
       function getInterval1(){
         var varia = Math.random()* interdelta;
@@ -85,6 +89,7 @@
     </script>
 
 <style>
+  *{margin:0;padding:0;font-size:0;}
     </style>
   </head>  
   <body id="bobo">

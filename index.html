@@ -43,7 +43,7 @@
         str += "<div class=\"carousel-item active\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" +
           getColor()+"\">" + "</div>";
       
-          for (var cont=1; cont < 5 ; cont++){
+          for (var cont=1; cont < 3; cont++){
           //alert(cont);
           str += "<div class=\"carousel-item\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" 
             + getColor()+"\">" + "</div>";
@@ -84,6 +84,22 @@
         //console.log(re + "  " + gr + " " + blu)
         return "rgb("+ re+","+gr+","+blu+")";
         //console.log(re);
+        
+      }
+      
+      function getColor1(){
+        
+        if(re + incRed > 254 || re + incRed < 1) randColor *= -1;
+        var incRed = Math.random()*randcolor;
+        re += Math.floor(incRed);
+        var incGr = Math.random()*randcolor;
+        if(gr+ incGr > 254 || gr + incgR < 1) randColor *= -1;
+        gr += Math.floor(incGr);
+        var incBlu = Math.random()*randcolor;
+        if(blu+ incBlu > 254 || blu + incBlu < 1) randColor *= -1;
+        blu += Math.floor(incBlu);
+        //console.log(re + "  " + gr + " " + blu)
+        return "rgb("+ re+","+gr+","+blu+")";
         
       }
     </script>

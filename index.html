@@ -28,16 +28,17 @@
         var re=00;
         var gr= 00;
         var blu=00;
-        var randcolor=50;
-        var medidas=40;
+        var randcolor=150;
+        var medidas=300;
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
       
         
-      for (var i =0; i<7;i++){
+      for (var i =0; i<100;i++){
         console.log(i);
-        str += "<div class=\"carousel slide\" data-ride=\"carousel\"  style=\"width:"+medidas+"px \" data-interval=\""+interval+"\">";
+        str += "<div class=\"carousel slide\" data-ride=\"carousel\""
+        + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";
         str += "<div class=\"carousel-item active\" style=\"background-color:" + getColor()+"\">"+0 + 0 + 0 + "</div>";
       
           for (var cont=1; cont < 5 ; cont++){
@@ -46,9 +47,16 @@
         }
 
         str += "</div>"
+        interval += getInterval();
       }
       b.innerHTML += str;
       });
+      
+      function getInterval() {
+        var varia = Math.random()+ 500;
+        if (interval > 4000 || interval < 500) varia *= -1;
+        return varia;
+      }
       
       function getColor(){
         var incRed = Math.random()*randcolor;

@@ -92,9 +92,7 @@
       
       function getColor1(){
         
-        if(re + randcolor > 254 || re + randcolor < 1) randcolor *= -1;
-        var incRed = Math.random()*randcolor;
-        re += Math.floor(incRed);
+        
         
         if(gr+ randcolor > 254 || gr + randcolor < 1) randcolor *= -1;
         var incGr = Math.random()*randcolor;
@@ -103,9 +101,22 @@
         if(blu+ randcolor > 254 || blu + randcolor < 1) randcolor *= -1;
         var incBlu = Math.random()*randcolor;
         blu += Math.floor(incBlu);
+        
+        if(re + randcolor > 254 || re + randcolor < 1) randcolor *= -1;
+        var incRed = Math.random()*randcolor;
+        re += Math.floor(incRed);
         //console.log(re + "  " + gr + " " + blu)
         return "rgb("+ re+","+gr+","+blu+")";
         
+      }
+      
+      function getColor2(){
+        
+        gr += Math.random()*randcolor - randcolor/2;
+        blu += Math.random()*randcolor - randcolor/2;
+        re += Math.random()*randcolor - randcolor/2;
+        if ()
+        return "rgb("+ re+","+gr+","+blu+")";
       }
     </script>
 

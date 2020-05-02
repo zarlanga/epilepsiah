@@ -31,6 +31,7 @@
         var blu=00;
         var randcolor=60;
         var medidas=40;
+       var subibaja = true;
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
@@ -50,8 +51,8 @@
         }
 
         str += "</div>"
-        //interval += getInterval();
-        interval= getInterval1();
+        interval += getInterval();
+        //interval= getInterval1();
       }
       b.innerHTML += str;
       });
@@ -67,9 +68,9 @@
         return varia;
       }
       function getInterval() {
-        var varia = Math.random()+ 500;
-        if (interval > 4000 || interval < 500) varia *= -1;
-        return varia;
+        //var varia = Math.random()* 500;
+        if (interval > 2000 || interval < 800) subibaja = !subibaja;
+        return subibaja ? -70 : 70;
       }
       
       function getColor(){

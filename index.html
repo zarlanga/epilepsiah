@@ -24,34 +24,43 @@
       //var cont=0;
         var contInner=0;
         var interval= 1000;
+      var interdelta=3000;
         var str= "";
         var re=00;
         var gr= 00;
         var blu=00;
         var randcolor=150;
-        var medidas=300;
+        var medidas=50;
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
       
         
-      for (var i =0; i<100;i++){
+      for (var i =0; i<300;i++){
         console.log(i);
         str += "<div class=\"carousel slide\" data-ride=\"carousel\""
         + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";
-        str += "<div class=\"carousel-item active\" style=\"background-color:" + getColor()+"\">"+0 + 0 + 0 + "</div>";
+        str += "<div class=\"carousel-item active\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" +
+          getColor()+"\">" + "</div>";
       
           for (var cont=1; cont < 5 ; cont++){
           //alert(cont);
-          str += "<div class=\"carousel-item\" style=\"background-color:" + getColor()+"\">"+cont + cont + cont + "</div>";
+          str += "<div class=\"carousel-item\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" 
+            + getColor()+"\">" + "</div>";
         }
 
         str += "</div>"
-        interval += getInterval();
+        //interval += getInterval();
+        interval= getInterval1();
       }
       b.innerHTML += str;
       });
       
+      
+      function getInterval1(){
+        var varia = Math.random()* interdelta;
+        return varia;
+      }
       function getInterval() {
         var varia = Math.random()+ 500;
         if (interval > 4000 || interval < 500) varia *= -1;
@@ -74,6 +83,9 @@
         
       }
     </script>
+
+<style>
+    </style>
   </head>  
   <body id="bobo">
    <!--<div class="carousel slide" data-ride="carousel"  data-interval="3000">
@@ -91,7 +103,7 @@
 -->
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
+    <!--<div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>-->
   </body>
 </html>

@@ -22,19 +22,27 @@
     <script src="/script.js" defer></script>
     <script>
       $(document).ready(function () {
-       var cont=0;
-        var contInner=0;
-        var interval= 3000;
-        var str= ""
+       
       var b = document.getElementById("bobo");
-      str += "<div class=\"carousel slide\" data-ride=\"carousel\"  data-interval=\"3000\">";
-      for (cont =0 ; cont < 5 ; cont++){
+        
+      str += "<div class=\"carousel slide\" data-ride=\"carousel\"  data-interval=\""+interval+"\">";
+      str += "<div class=\"carousel-item active\">"+cont + cont + cont + "</div>";
+        cont++;
+        for (; cont < 5 ; cont++){
         //alert(cont);
         str += "<div class=\"carousel-item\">"+cont + cont + cont + "</div>";
       }
       str += "</div>"
       b.innerHTML += str;
       });
+      
+      function getColor(){
+        var incRed = Math.random()*randcolor;
+        if(re + incRed > 254) re -+254;
+        re += incRed;
+        console.log(re);
+        
+      }
     </script>
   </head>  
   <body id="bobo">

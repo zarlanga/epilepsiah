@@ -29,7 +29,7 @@
         var re=00;
         var gr= 00;
         var blu=00;
-        var randcolor=30;
+        var randcolor=60;
         var medidas=40;
       $(document).ready(function () {
        
@@ -37,11 +37,11 @@
       
         
       for (var i =0; i<500;i++){
-        console.log(i);
+        //console.log(i);
         str += "<div class=\"carousel slide\" data-ride=\"carousel\""
         + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";
         str += "<div class=\"carousel-item active\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" +
-          getColor()+"\">" + "</div>";
+          getColor1()+"\">" + "</div>";
       
           for (var cont=1; cont < 3; cont++){
           //alert(cont);
@@ -62,7 +62,8 @@
       }
       
       function getInterval1(){
-        var varia = Math.random()* interdelta;
+        var varia = 750 + Math.random()* interdelta;
+        if (varia < 1000) console.log(varia);
         return varia;
       }
       function getInterval() {
@@ -89,14 +90,16 @@
       
       function getColor1(){
         
-        if(re + incRed > 254 || re + incRed < 1) randColor *= -1;
+        if(re + randcolor > 254 || re + randcolor < 1) randcolor *= -1;
         var incRed = Math.random()*randcolor;
         re += Math.floor(incRed);
+        
+        if(gr+ randcolor > 254 || gr + randcolor < 1) randcolor *= -1;
         var incGr = Math.random()*randcolor;
-        if(gr+ incGr > 254 || gr + incgR < 1) randColor *= -1;
         gr += Math.floor(incGr);
+        
+        if(blu+ randcolor > 254 || blu + randcolor < 1) randcolor *= -1;
         var incBlu = Math.random()*randcolor;
-        if(blu+ incBlu > 254 || blu + incBlu < 1) randColor *= -1;
         blu += Math.floor(incBlu);
         //console.log(re + "  " + gr + " " + blu)
         return "rgb("+ re+","+gr+","+blu+")";

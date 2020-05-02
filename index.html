@@ -31,9 +31,9 @@
         var blu=120;
         var randcolor=100;
       var subibaja1 = true;
-        var medidas=40;
+        var medidas=45;
        var subibaja = true;
-      var cuantos = (window.innerWidth > 900) ? 500 :100;
+      var cuantos = (window.innerWidth > 900) ? 350 :100;
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
@@ -44,12 +44,14 @@
         str += "<div class=\"carousel slide\" data-ride=\"carousel\""
         + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";
         str += "<div class=\"carousel-item active\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" +
-          getColor2()+"\">" + "</div>";
+          getColor3()+"\">" + "</div>";
       
           for (var cont=1; cont < 3; cont++){
-          //alert(cont);
+            //console.log("" + re +" " + gr +" " + blu );
+            //console.log(subibaja1);
+            
           str += "<div class=\"carousel-item\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" 
-            + getColor2()+"\">" + "</div>";
+            + getColor3()+"\">" + "</div>";
         }
 
         str += "</div>"
@@ -113,9 +115,9 @@
       
       function getColor2(){
         subibaja1 = !subibaja1;
-        gr += Math.random()*randcolor - randcolor/2;
-        blu += Math.random()*randcolor - randcolor/2;
-        re += Math.random()*randcolor - randcolor/2;
+        gr += Math.floor(Math.random()*randcolor) - randcolor/2;
+        blu += Math.floor(Math.random()*randcolor) - randcolor/2;
+        re += Math.floor(Math.random()*randcolor) - randcolor/2;
         if (gr<2) gr=0;
         if (gr>255) gr= 255;
         if (blu<2) blu=0;
@@ -127,6 +129,13 @@
           blu = 255 -blu;
           re = 255 - re;
         }
+        return "rgb("+ re+","+gr+","+blu+")";
+      }
+      
+      function getColor3(){
+        gr = Math.floor(Math.random()*255);
+        re = Math.floor(Math.random()*255);
+        blu = Math.floor(Math.random()*255);
         return "rgb("+ re+","+gr+","+blu+")";
       }
     </script>

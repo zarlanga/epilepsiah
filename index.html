@@ -32,12 +32,13 @@
         var randcolor=60;
         var medidas=40;
        var subibaja = true;
+      var cuantos = (window.innerWidth > 900) ? 500 :100;
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
       
         
-      for (var i =0; i<500;i++){
+      for (var i =0; i<cuantos;i++){
         //console.log(i);
         str += "<div class=\"carousel slide\" data-ride=\"carousel\""
         + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";

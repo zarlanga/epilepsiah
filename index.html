@@ -26,10 +26,11 @@
         var interval= 1000;
       var interdelta=1500;
         var str= "";
-        var re=00;
-        var gr= 00;
-        var blu=00;
-        var randcolor=60;
+        var re=120;
+        var gr= 120;
+        var blu=120;
+        var randcolor=100;
+      var subibaja1 = true;
         var medidas=40;
        var subibaja = true;
       var cuantos = (window.innerWidth > 900) ? 500 :100;
@@ -43,12 +44,12 @@
         str += "<div class=\"carousel slide\" data-ride=\"carousel\""
         + "style=\"width:"+medidas+"px;height:"+medidas+"px;display:inline-block;\" data-interval=\""+interval+"\">";
         str += "<div class=\"carousel-item active\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" +
-          getColor1()+"\">" + "</div>";
+          getColor2()+"\">" + "</div>";
       
           for (var cont=1; cont < 3; cont++){
           //alert(cont);
           str += "<div class=\"carousel-item\" style=\"width:"+medidas+"px;height:"+medidas+"px;background-color:" 
-            + getColor()+"\">" + "</div>";
+            + getColor2()+"\">" + "</div>";
         }
 
         str += "</div>"
@@ -111,11 +112,21 @@
       }
       
       function getColor2(){
-        
+        subibaja1 = !subibaja1;
         gr += Math.random()*randcolor - randcolor/2;
         blu += Math.random()*randcolor - randcolor/2;
         re += Math.random()*randcolor - randcolor/2;
-        if ()
+        if (gr<2) gr=0;
+        if (gr>255) gr= 255;
+        if (blu<2) blu=0;
+        if (blu>255) blu= 255;
+        if (re<2) re=0;
+        if (re>255) re= 255;
+        if (subibaja) {
+          gr = 255 -gr;
+          blu = 255 -blu;
+          re = 255 - re;
+        }
         return "rgb("+ re+","+gr+","+blu+")";
       }
     </script>

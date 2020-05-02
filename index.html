@@ -5,19 +5,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
     
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
+    <script>
+      $(document).ready(function () {
+        alert("pepe");
+    var b = document.getElementById("bobo");
+      b.innerHTML += "atatatatata";
+      }
+    </script>
   </head>  
-  <body>
-    <h1>Hi there!</h1>
-    
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
+  <body id="bobo">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  data-interval="3000">
+				
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					asdfasdf
+				  </div>
+				  <div class="carousel-item">
+          cccccccccc
+				  </div>
+				  
+				</div>
+			</div>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->

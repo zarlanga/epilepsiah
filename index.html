@@ -21,16 +21,25 @@
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
     <script>
+      var cont=0;
+        var contInner=0;
+        var interval= 5000;
+        var str= "";
+        var re=00;
+        var gr= 00;
+        var blu=00;
+        var randcolor=50;
+        
       $(document).ready(function () {
        
       var b = document.getElementById("bobo");
         
       str += "<div class=\"carousel slide\" data-ride=\"carousel\"  data-interval=\""+interval+"\">";
-      str += "<div class=\"carousel-item active\">"+cont + cont + cont + "</div>";
+      str += "<div class=\"carousel-item active\" style=\"background-color:" + getColor()+"\">"+cont + cont + cont + "</div>";
         cont++;
         for (; cont < 5 ; cont++){
-        //alert(cont);
-        str += "<div class=\"carousel-item\">"+cont + cont + cont + "</div>";
+        alert(cont);
+        str += "<div class=\"carousel-item active\" style=\"background-color:" + getColor()+"\">"+cont + cont + cont + "</div>";
       }
       str += "</div>"
       b.innerHTML += str;
@@ -38,9 +47,17 @@
       
       function getColor(){
         var incRed = Math.random()*randcolor;
-        if(re + incRed > 254) re -+254;
-        re += incRed;
-        console.log(re);
+        if(re + incRed > 254) re -=254;
+        re += Math.floor(incRed);
+        var incGr = Math.random()*randcolor;
+        if(gr+ incGr > 254) gr -=254;
+        gr += Math.floor(incGr);
+        var incBlu = Math.random()*randcolor;
+        if(blu+ incBlu > 254) blu -=254;
+        blu += Math.floor(incBlu);
+        //console.log(re + "  " + gr + " " + blu)
+        return "rgb("+ re+","+gr+","+blu+")";
+        //console.log(re);
         
       }
     </script>

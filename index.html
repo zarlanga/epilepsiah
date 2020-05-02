@@ -22,14 +22,23 @@
     <script src="/script.js" defer></script>
     <script>
       $(document).ready(function () {
-        alert("pepe");
-    var b = document.getElementById("bobo");
-      b.innerHTML += "atatatatata";
+       var cont=0;
+        var contInner=0;
+        var interval= 3000;
+        var str= ""
+      var b = document.getElementById("bobo");
+      str += "<div class=\"carousel slide\" data-ride=\"carousel\"  data-interval=\"3000\">";
+      for (cont =0 ; cont < 5 ; cont++){
+        //alert(cont);
+        str += "<div class=\"carousel-item\">"+cont + cont + cont + "</div>";
       }
+      str += "</div>"
+      b.innerHTML += str;
+      });
     </script>
   </head>  
   <body id="bobo">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  data-interval="3000">
+   <!--<div class="carousel slide" data-ride="carousel"  data-interval="3000">
 				
 				<div class="carousel-inner">
 				  <div class="carousel-item active">
@@ -40,8 +49,8 @@
 				  </div>
 				  
 				</div>
-			</div>
-
+			</div> 
+-->
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
